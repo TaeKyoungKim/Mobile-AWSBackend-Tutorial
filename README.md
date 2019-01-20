@@ -33,7 +33,7 @@ AWS Elastic Beanstalk는 Java, .NET, PHP, Node.js, Python, Ruby, Go, Docker를 �
 
 한마디로 가상 서버 환경 구축, 관리, 로드 밸런싱, RDS(Relation Database Service) 등의 컨트롤을 한번에 할 수 있도록 구성되어 있는 웹 업플리케이션 관리, 배포 서비스입니다.
 
-## 튜토리얼
+## AWS 콘솔을 통한 앱 생성 및 관리 튜토리얼
 
 ### AWS 게정 생성
 
@@ -141,8 +141,59 @@ Configuration 메뉴를 통해 현재 서비스의 리소스들을 확인할 수
 2. 해당 환경의 관리 페이지로 이동합니다.
 3. Configuration을 선택합니다.
 4. 용량 구성 카드에서 수정을 선택합니다.
+![Configuration](./images/config.png "Configuration")
+5. Auto Scaling 그룹 섹션에서 환경 유형을 로드 밸런싱 수행으로 변경합니다.
+6. 인스턴스 행에서 최대를 4로 변경하고 최소를 2로 변경합니다.
+7. Modify capacity(용량 수정) 페이지 하단에서 저장을 선택합니다.
+8. Configuration overview(구성 개요) 페이지 하단에서 적용을 선택합니다.
+9. 경고가 표시됩니다. 이 경고는 마이그레이션이 모든 현재 인스턴스를 대체함을 알려줍니다. Confirm을 선택합니다.
 
-![Configuration](./images/aeb-env-config-capacity.png"Configuration")
+## 로드벨런서 확인
+로드 밸런서 변경 사항을 확인하려면 탐색 창에서 [Events]를 선택합니다.
+
+이벤트 목록에 이벤트 Successfully deployed new configuration to environment(새 구성이 환경에 성공적으로 배포되었습니다)가 보일 것입니다. 이를 통해 최소 인스턴스 개수가 2로 설정되었음을 확인합니다. 두 번째 인스턴스가 자동으로 시작됩니다.
+
+최상단에 Services -> EC2 를 통해 Amazon EC2 콘솔을 엽니다.
+
+좌측 사이드바에서 LOAD BALANCING에서 로드 밸런서를 선택합니다.
+원하는 인스턴스 이름의 로드 밸런서가 나타날 때까지 다음 두 단계를 반복합니다.
+
+1. 로드 밸런서 목록에서 로드 밸런서를 선택합니다.
+2. Load Balancer: <load balancer name> 창에서 인스턴스를 선택한 후, 인스턴스 테이블에서 이름을 봅니다.
+
+![loadbalancer](./images/loadbalancer.png "로드 벨런서")
+
+## 환경 확인
+
+EC2 인스턴스 확인
+![EC2](./images/ec2dashboard.png "EC2")
+
+S3로 가서 자동으로 생성된 버킷과 올라간 버전 확인
+![S3](./images/s3.png "S3")
+
+## 혼자서 해보기
+
+위 과정을 보지 않고 새로운 어플리케이션 만들기를 통해 혼자서 해봅니다.
+
+## 깨끗히 삭제하기
+
+### 업로드한 애플리케이션 파일들 삭제
+
+1. 상단 앱 이름을 누르고 Application Versions를 선택합니다.
+2. 애플리케이션 버전 페이지에서 삭제할 모든 애플리케이션 버전을 선택한 후 삭제를 선택합니다.
+![Delete Versions](./images/deleteversions.png "Delete Versions")
+
+### 환경 삭제
+
+환경 대쉬보드에서 Actions -> Terminate Environment를 통해 삭제합니다.
+![Delete Env](./images/terminateenv.png "Delete Env")
+
+### 애플리케이션 삭제
+
+왼쪽 상단에서 Elastic Beanstalk를 선택하여 기본 대시보드로 돌아갑니다.
+
+어플리케이션에서 Actions -> Delete Application을 통해 삭제합니다.
+![Delete App](./images/deleteapp.png "Delete App")
 
 
 ## 삭제
