@@ -82,7 +82,11 @@ AWS 리소스에서 샘플 애플리케이션을 실행하기 위해 Elastic Bea
 
 ![생성 직후 Events](./images/events2.png "생성 직후 Events")
 
-AWS 리소스가 있으며 이름이 GettingStartedApp-env인 환경을 시작합니다.
+- AWS 리소스가 있으며 이름이 GettingStartedApp-env인 환경을 시작합니다.
+
+- 기본 Elastic Beanstalk 샘플 애플리케이션 파일을 나타내는 Sample Application이라는 새 애플리케이션 버전을 만듭니다.(S3에 저장)
+
+- 샘플 애플리케이션 코드를 MyFirstApp-env에 배포합니다.
 
 **EC2 인스턴스** – 선택한 플랫폼에서 웹 앱을 실행하도록 구성된 Amazon Elastic Compute Cloud(Amazon EC2) 가상 머신입니다.
 
@@ -97,10 +101,6 @@ AWS 리소스가 있으며 이름이 GettingStartedApp-env인 환경을 시작�
 **AWS CloudFormation 스택** – Elastic Beanstalk에서는 AWS CloudFormation을 사용하여 사용자 환경의 리소스를 시작하고 구성 변경 사항을 전파합니다. 리소스는 AWS CloudFormation 콘솔에서 볼 수 있는 템플릿에서 정의됩니다.
 
 **도메인 이름** – subdomain.region.elasticbeanstalk.com 형식으로 웹 앱으로 라우팅되는 도메인 이름입니다.
-
-기본 Elastic Beanstalk 샘플 애플리케이션 파일을 나타내는 Sample Application이라는 새 애플리케이션 버전을 만듭니다.(S3에 저장)
-
-샘플 애플리케이션 코드를 MyFirstApp-env에 배포합니다.
 
 ### Environment 확인
 
