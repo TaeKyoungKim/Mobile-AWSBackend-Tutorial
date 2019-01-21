@@ -194,4 +194,4 @@ S3로 가서 자동으로 생성된 버킷과 올라간 버전 확인
 어플리케이션에서 Actions -> Delete Application을 통해 삭제합니다.
 ![Delete App](./images/deleteapp.png "Delete App")
 
-- 미리 버전을 삭제하지 않은 경우 S3 삭제를 잊지 말것.
+- 미리 애플리케이션 버전을 삭제하지 않은 경우 S3 삭제를 잊지 말것.
