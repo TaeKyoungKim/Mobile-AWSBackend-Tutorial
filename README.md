@@ -30,11 +30,11 @@ Elastic Beanstalk를 사용하여 애플리케이션을 실행하는 인프라�
 
 AWS Elastic Beanstalk는 Java, .NET, PHP, Node.js, Python, Ruby, Go, Docker를 사용하여 Apache, Nginx, IIS와 등에 배포하고 있는 웹 어플리케이션을 간편하게 배포하고 확장할 수 있는 서비스이다. Elastic Beanstalk를 사용하면 로컬 서버에서 웹 어플리케이션을 개발, 배포, 관리하는 것과 달리 작성한 코드를 업로드하기만 하면 자동으로 로드 밸런싱 애플리케이션 상태 모니터링 등 배포와 관리를 자동으로 처리할 수 있습니다.
 
-한마디로 가상 서버 환경 구축, 관리, 로드 밸런싱, RDS(Relation Database Service) 등의 컨트롤을 한번에 할 수 있도록 구성되어 있는 웹 업플리케이션 관리, 배포 서비스입니다.
+한마디로 가상 서버 환경 구축, 관리, 로드 밸런싱, RDS(Relation Database Service) 등의 컨트롤을 한번에 할 수 있도록 구성되어 있는 웹 업플리케이션 관리, 배포 서비스입니다.
 
 ## AWS 콘솔을 통한 앱 생성 및 관리 튜토리얼
 
-### AWS 게정 생성
+### AWS 게정 생성
 
 https://console.aws.amazon.com/
 
@@ -44,7 +44,7 @@ Elastic Beanstalk는 무료로 사용할 수 있지만, 여기에서 제공하�
 
 [생성하기](https://ap-northeast-2.console.aws.amazon.com/elasticbeanstalk/home?region=ap-northeast-2)
 
-지역: 서울로 변경 후 Create New Application 을 통해 생성
+지역: 서울로 변경 후 Create New Application 을 통해 생성
 
 
 앱 이름 및 도메인 이름은 원하는대로 입력하세요. (여기서는 MyFirstApp 사용)
@@ -67,7 +67,7 @@ Elastic Beanstalk는 무료로 사용할 수 있지만, 여기에서 제공하�
 
 ![환경 생성 옵션](./images/create-env2.png "환경 생성 옵션")
 
-5. Create Environment 클릭
+5. Create Environment 클릭
 
 ![생성 과정 로그](./images/events.png "생성 과정 로그")
 
@@ -75,7 +75,7 @@ Elastic Beanstalk는 무료로 사용할 수 있지만, 여기에서 제공하�
 
 AWS 리소스에서 샘플 애플리케이션을 실행하기 위해 Elastic Beanstalk에서는 다음 작업을 수행하며 완료되는 데는 약 5분이 걸립니다.
 
-생성 직후 Events를 보면 아래 과정이 나열되어 있는 것을 볼 수 있습니다.
+생성 직후 Events를 보면 아래 과정이 나열되어 있는 것을 볼 수 있습니다.
 
 ![생성 직후 Events](./images/events2.png "생성 직후 Events")
 
@@ -99,7 +99,7 @@ AWS CloudFormation 스택 – Elastic Beanstalk에서는 AWS CloudFormation을 �
 
 샘플 애플리케이션 코드를 MyFirstApp-env에 배포합니다.
 
-### Environment 확인
+### Environment 확인
 
 생성된 URL을 통해 동작을 확인한다.
 
@@ -109,14 +109,14 @@ AWS CloudFormation 스택 – Elastic Beanstalk에서는 AWS CloudFormation을 �
 Configuration 메뉴를 통해 현재 서비스의 리소스들을 확인할 수 있다.
 ![Environment 확인3](./images/check-env3.png "Environment 확인3")
 
-### 웹앱 업로드 및 배포
+### 웹앱 업로드 및 배포
 
 환경에서 다른 업데이트 작업이 현재 진행 중이지 않은 한 언제든지 새 애플리케이션 버전을 배포할 수 있습니다.
 
 아마존에서 제공하는 nodejs 샘플 앱을 올려보겠습니다.
 파일 다운로드 링크 Node.js – [nodejs-v1.zip](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/samples/nodejs-v1.zip)
 
-1. Upload and Deploy를 통해 업로드
+1. Upload and Deploy를 통해 업로드
 
 ![upload](./images/upload.png "upload")
 
@@ -174,7 +174,7 @@ S3로 가서 자동으로 생성된 버킷과 올라간 버전 확인
 
 위 과정을 보지 않고 새로운 어플리케이션 만들기를 통해 혼자서 해봅니다.
 
-## 깨끗히 삭제하기
+## 깨끗히 삭제하기
 
 ### 업로드한 애플리케이션 파일들 삭제
 
@@ -194,6 +194,4 @@ S3로 가서 자동으로 생성된 버킷과 올라간 버전 확인
 어플리케이션에서 Actions -> Delete Application을 통해 삭제합니다.
 ![Delete App](./images/deleteapp.png "Delete App")
 
-
-## 삭제
-미리 버전을 삭제하고 혹시 놓칠 경우 S3 삭제를 잊지 말것.
+- 미리 버전을 삭제하지 않은 경우 S3 삭제를 잊지 말것.
