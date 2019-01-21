@@ -81,19 +81,19 @@ AWS 리소스에서 샘플 애플리케이션을 실행하기 위해 Elastic Bea
 
 AWS 리소스가 있으며 이름이 GettingStartedApp-env인 환경을 시작합니다.
 
-	EC2 인스턴스 – 선택한 플랫폼에서 웹 앱을 실행하도록 구성된 Amazon Elastic Compute Cloud(Amazon EC2) 가상 머신입니다.
+EC2 인스턴스 – 선택한 플랫폼에서 웹 앱을 실행하도록 구성된 Amazon Elastic Compute Cloud(Amazon EC2) 가상 머신입니다.
 
-	특정 언어 버전, 프레임워크, 웹 컨테이너 또는 조합을 지원하도록 각 플랫폼마다 실행하는 소프트웨어, 구성 파일 및 스크립트 세트가 다릅니다. 대부분의 플랫폼에서는 웹 앱 앞에 위치해 웹 앱으로 요청을 전달하고, 정적 자산을 제공하고, 액세스 및 오류 로그를 생성하는 역방향 프록시로 Apache 또는 nginx를 사용합니다.
+특정 언어 버전, 프레임워크, 웹 컨테이너 또는 조합을 지원하도록 각 플랫폼마다 실행하는 소프트웨어, 구성 파일 및 스크립트 세트가 다릅니다. 대부분의 플랫폼에서는 웹 앱 앞에 위치해 웹 앱으로 요청을 전달하고, 정적 자산을 제공하고, 액세스 및 오류 로그를 생성하는 역방향 프록시로 Apache 또는 nginx를 사용합니다.
 
-	인스턴스 보안 그룹 – 포트 80에서 수신을 허용하도록 구성된 Amazon EC2 보안 그룹입니다. 이 리소스를 통해 로드 밸런서의 HTTP 트래픽이 웹 앱을 실행하는 EC2 인스턴스에 도달할 수 있습니다. 기본적으로 다른 포트에서는 트래픽이 허용되지 않습니다.
+인스턴스 보안 그룹 – 포트 80에서 수신을 허용하도록 구성된 Amazon EC2 보안 그룹입니다. 이 리소스를 통해 로드 밸런서의 HTTP 트래픽이 웹 앱을 실행하는 EC2 인스턴스에 도달할 수 있습니다. 기본적으로 다른 포트에서는 트래픽이 허용되지 않습니다.
 
-	Amazon S3 버킷 – Elastic Beanstalk 사용 시 생성된 소스 코드, 로그 및 기타 결과물의 스토리지 위치입니다.
+Amazon S3 버킷 – Elastic Beanstalk 사용 시 생성된 소스 코드, 로그 및 기타 결과물의 스토리지 위치입니다.
 
-	Amazon CloudWatch 경보 – 환경의 인스턴스에 대한 로드를 모니터링하는 두 개의 CloudWatch 경보로, 로드가 너무 높거나 너무 낮은 경우 트리거됩니다. 경보가 트리거되면 이에 대한 응답으로 그룹이 확장 또는 축소됩니다.
+Amazon CloudWatch 경보 – 환경의 인스턴스에 대한 로드를 모니터링하는 두 개의 CloudWatch 경보로, 로드가 너무 높거나 너무 낮은 경우 트리거됩니다. 경보가 트리거되면 이에 대한 응답으로 그룹이 확장 또는 축소됩니다.
 
-	AWS CloudFormation 스택 – Elastic Beanstalk에서는 AWS CloudFormation을 사용하여 사용자 환경의 리소스를 시작하고 구성 변경 사항을 전파합니다. 리소스는 AWS CloudFormation 콘솔에서 볼 수 있는 템플릿에서 정의됩니다.
+AWS CloudFormation 스택 – Elastic Beanstalk에서는 AWS CloudFormation을 사용하여 사용자 환경의 리소스를 시작하고 구성 변경 사항을 전파합니다. 리소스는 AWS CloudFormation 콘솔에서 볼 수 있는 템플릿에서 정의됩니다.
 
-	도메인 이름 – subdomain.region.elasticbeanstalk.com 형식으로 웹 앱으로 라우팅되는 도메인 이름입니다.
+도메인 이름 – subdomain.region.elasticbeanstalk.com 형식으로 웹 앱으로 라우팅되는 도메인 이름입니다.
 
 기본 Elastic Beanstalk 샘플 애플리케이션 파일을 나타내는 Sample Application이라는 새 애플리케이션 버전을 만듭니다.(S3에 저장)
 
