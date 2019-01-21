@@ -1,7 +1,7 @@
 
 # Mobile Client와 Server(Parse Server) 통신 튜토리얼
 
-작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
+작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
 
 1. AWS 리눅스 서버 구축
 2. 아마존 RDS Database
