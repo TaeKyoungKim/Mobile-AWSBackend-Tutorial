@@ -1,6 +1,7 @@
-비공개 자료
 
 # Mobile Client와 Server(Parse Server) 통신 튜토리얼
+
+작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
 
 1. AWS 리눅스 서버 구축
 2. 아마존 RDS Database
@@ -9,7 +10,9 @@
 5. 모바일 클라이언트 로그인 구현
 6. 클라이언트-서버 통신을 통한 서비스 구현
 
-## AWS EB를 사용한 Parse Server 구축하기
+## AWS EB를 사용하여 NodeJS 서버 구축하기
+
+Official 문서를 기준으로 작성되었습니다.
 
 - [Official](https://docs.aws.amazon.com)
 
