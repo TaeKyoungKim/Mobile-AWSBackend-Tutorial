@@ -370,3 +370,7 @@ http://0.0.0.0:4040 혹은 http://localshot:4040 를 통해 로그인 과정 없
 - 로컬 NodeJS 환경에서 express 프레임워크를 통해 Parse Server를 띄워 보았습니다.
 - Parse Server의 클라우드 코드를 통해 API를 생성하고 Postman을 통해 테스트해 보았습니다.
 - Parse Dashboard로 Parse Server 데이터베이스에 접속하여 관리자 페이지를 동작하였습니다.
+
+다음은 위에서 구성한 Parse Server를 실제로 AWS 에 배포하여 구동해보도록 하겠습니다.
+
+[이전 과정으로](./README.md) / [다음 과정으로](./Tutorial2.md)
