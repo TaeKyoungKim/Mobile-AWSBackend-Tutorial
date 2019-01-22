@@ -1,5 +1,7 @@
 # 로컬에 Parse-Server, Parse-Dashboard 및 PostgreSQL 설치 및 테스트
 
+작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
+
 이 튜토리얼은 NodeJS 환경을 기본으로 합니다.
 AWS에서 RDS로 PostgreSQL을 지원하기 때문에 MongoDB 대신 PostgreSQL을 사용하겠습니다.
 

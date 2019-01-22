@@ -1,5 +1,7 @@
 # 로컬에 구축한 서버 환경을 AWS EB로 배포 및 테스트
 
+작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
+
 앞에 튜토리얼에 이어 로컬에 구축한 환경을 AWS Elasticbeanstalk로 배포하여 실제 운영 가능한 백엔드 서버로 사용해보도록 하겠습니다.
 
 1. AWS 콘솔을 통한 Elastic Beanstalk 앱생성 및 RDS 설정
