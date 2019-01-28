@@ -3,6 +3,8 @@
 
 작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
 
+도움이 되셨다면 우상단 Github **Star** 를 눌러주세요. 작성자 기분이 좋아집니다.
+
 1. AWS란
 2. Elastic Beanstalk란
 3. AWS 게정 생성

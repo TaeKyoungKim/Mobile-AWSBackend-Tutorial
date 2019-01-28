@@ -1,4 +1,4 @@
-# 로컬에 Parse-Server, Parse-Dashboard 및 PostgreSQL 설치 및 테스트
+# 로컬에 Parse-Server, Parse-Dashboard 및 PostgreSQL 설치 튜토리얼
 
 작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
 
