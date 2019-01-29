@@ -224,7 +224,7 @@ main.js에 `Parse.Cloud.define`을 통해 선언되어진 `hello` 를 외부에�
 cloud/main.js 하단에 다음 코드를 추가합니다.
 
 ```js
-Parse.Cloud.define('whoami', function(req, res) {
+Parse.Cloud.define('whoami', (req) => {
   const name = req.params.name;
   const money = req.params.money;
 
