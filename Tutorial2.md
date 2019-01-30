@@ -28,11 +28,11 @@ Elastic Beanstalk에서는 EC2 인스턴스를 사용하여 컴퓨팅 자원을
 
 1. 미리 만들어놓은 EB의 앱 환경을 여시고 Congifuration -> 하단의 Database 항목으로 가 Modify를 통해 수정을 합니다.
 
-![App Configuration](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/RDS1.png "App Configuration")
+![App Configuration](./images/RDS1.png "App Configuration")
 
 2. 하단에 Database 항목 수정
 
-![RDS Configuration](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/RDS2.png "RDS Configuration")
+![RDS Configuration](./images/RDS2.png "RDS Configuration")
 
 3Modify를 서택한 후 아래와 같이 설정을 합시다. Password같은 경우는 개인이 잘 관리하셔야합니다.
 
@@ -45,7 +45,7 @@ Elastic Beanstalk에서는 EC2 인스턴스를 사용하여 컴퓨팅 자원을
 - Retention: Create Snapshot
 - Availability: Low or High
 
-![DB Settings](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/dbsettings.png "DB Settings")
+![DB Settings](./images/dbsettings.png "DB Settings")
 
 배포시 Availability: High(Multi AZ)를 선택하면 DB 장애시 자동으로 생성되고 관리되는 예비 복제본을 사용하여 서비스를 유지시킬 수 있습니다. 물리적인 스토리지를 하나 더 생성하기 때문에 비용이 조금 더 올라가니 실 서비스 운영시 고려해보세요.
 
@@ -125,7 +125,7 @@ AWS Identity and Access Management의 약자로서 액세스 키를 사용하여
 
 [IAM Console](https://console.aws.amazon.com/iam/home#/home) 을 통해 EB CLI를 사용할때 쓸 수 있는 계정을 생성해보도록 하겠습니다.
 
-![IAM User](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam1.png "IAM User")
+![IAM User](./images/iam1.png "IAM User")
 
 ### IAM을 통한 유저 생성
 
@@ -135,23 +135,23 @@ AWS Identity and Access Management의 약자로서 액세스 키를 사용하여
 - **Programmatic access**: 해당 유저에게 CLI를 사용해줄 수 있게 합니다. Access key와 secret key가 제공됩니다.
 - **AWS Management Console access**: 이 계정을 사용해 별도로 콘솔에 로그인이 가능합니다.
 
-![IAM Add User](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam2.png "IAM Add User")
+![IAM Add User](./images/iam2.png "IAM Add User")
 
 2.  권한설정 - Next:Permission 버튼을 눌러 권한설정으로 넘어갑니다.
    여기서는 Admin 그룹을 선택하여 모든 권한을 주도록 하겠습니다.
 
-![IAM User Permission](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam3.png "IAM User Permission")
+![IAM User Permission](./images/iam3.png "IAM User Permission")
 
 3. 태그 추가
    선택 항목으로서 여기서는 여러명의 유저 혹은 팀원이 사용한다면 역할에 따라 구분하기 쉽도록 position이란 태그를 추가해 보았습니다.
 
-![IAM User Tag](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam4.png "IAM User Tag")
+![IAM User Tag](./images/iam4.png "IAM User Tag")
 
 4. Review 후 Create user 버튼을 눌러 새로운 유저를 생성합니다.
 
 로컬환경에 Acess Key와 Secret access key를 등록하여 EB CLI를 사용할 것입니다. Secret access key는 비밀스럽게 잘 적어두세요.
 
-![IAM User Key](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam5.png "IAM User Key")
+![IAM User Key](./images/iam5.png "IAM User Key")
 
 이제 CLI를 사용할 수 있는 유저를 생성하고 Access Key와 Secret Key를 발급받았습니다.
 
@@ -265,7 +265,7 @@ Upload Complete.
 
 이제 Application 환경의 url로 접속해봅시다.
 
-![502](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/502.png "502")
+![502](./images/502.png "502")
 
 접속이 되지 않습니다. 다음 장에서 문제를 해결해보죠.
 
@@ -365,7 +365,7 @@ unsafe-perm=true
 자 이제 어떻게 테스트할 수 있을까요?
 local과 다른 점은 주소 뿐입니다. 기존 Postman에서 테스트하던 API 접속 주소를 실제 서버 주소로 변경해주면 동작하겠죠?
 
-![Deploy Test](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/deploytest.png "Deploy test")
+![Deploy Test](./images/deploytest.png "Deploy test")
 
 
 

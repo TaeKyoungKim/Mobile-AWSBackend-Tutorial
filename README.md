@@ -66,17 +66,17 @@
 
   1. Actions -> Create environment
 
-  ![환경 생성](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/create-env.png "환경 생성")
+  ![환경 생성](./images/create-env.png "환경 생성")
 
   2. Web server environment 선택
   3. 이름 정하고 Preconfigured platform은 Node.js로 선택
   4. Application Code는 Sample Application 선택
 
-  ![환경 생성 옵션](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/create-env2.png "환경 생성 옵션")
+  ![환경 생성 옵션](./images/create-env2.png "환경 생성 옵션")
 
   5. Create Environment 클릭
 
-  ![생성 과정 로그](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/events.png "생성 과정 로그")
+  ![생성 과정 로그](./images/events.png "생성 과정 로그")
 
   ### Create Environment의 동작
 
@@ -84,7 +84,7 @@
 
   생성 직후 Events를 보면 아래 과정이 나열되어 있는 것을 볼 수 있습니다.
 
-  ![생성 직후 Events](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/events2.png "생성 직후 Events")
+  ![생성 직후 Events](./images/events2.png "생성 직후 Events")
 
   - AWS 리소스가 있으며 이름이 GettingStartedApp-env인 환경을 시작합니다.
   - 기본 Elastic Beanstalk 샘플 애플리케이션 파일을 나타내는 Sample Application이라는 새 애플리케이션 버전을 만듭니다.(S3에 저장)
@@ -108,11 +108,11 @@
 
   생성된 URL을 통해 동작을 확인한다.
 
-  ![Environment 확인](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/check-env1.png "Environment 확인")
-  ![Environment 확인2](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/check-env2.png "Environment 확인2")
+  ![Environment 확인](./images/check-env1.png "Environment 확인")
+  ![Environment 확인2](./images/check-env2.png "Environment 확인2")
 
   Configuration 메뉴를 통해 현재 서비스의 리소스들을 확인할 수 있다.
-  ![Environment 확인3](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/check-env3.png "Environment 확인3")
+  ![Environment 확인3](./images/check-env3.png "Environment 확인3")
 
   ### 애플리케이션 업로드 및 배포
 
@@ -123,11 +123,11 @@
 
   1. Upload and Deploy를 통해 업로드
 
-  ![upload](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/upload.png "upload")
+  ![upload](./images/upload.png "upload")
 
   3. URL로 들어가서 확인
 
-  ![upload 확인3](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/check-env3.png "upload 확인3")
+  ![upload 확인3](./images/check-env3.png "upload 확인3")
 
   새 애플리케이션 버전이 업로드되고 애플리케이션 버전 테이블에 추가됩니다. 배포된 테이블을 보려면 애플리케이션 버전 페이지를 선택하여 볼 수 있습니다.
 
@@ -145,7 +145,7 @@
   2. 해당 환경의 관리 페이지로 이동합니다.
   3. Configuration을 선택합니다.
   4. 용량 구성 카드에서 수정을 선택합니다.
-     ![Configuration](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/config.png "Configuration")
+     ![Configuration](./images/config.png "Configuration")
   5. Auto Scaling 그룹 섹션에서 환경 유형을 로드 밸런싱 수행으로 변경합니다.
   6. 인스턴스 행에서 최대를 4로 변경하고 최소를 2로 변경합니다.
   7. Modify capacity(용량 수정) 페이지 하단에서 저장을 선택합니다.
@@ -162,14 +162,14 @@
      1. 로드 밸런서 목록에서 로드 밸런서를 선택합니다.
      2. Load Balancer: <load balancer name> 창에서 인스턴스를 선택한 후, 인스턴스 테이블에서 이름을 봅니다.
 
-  ![loadbalancer](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/loadbalancer.png "로드 벨런서")
+  ![loadbalancer](./images/loadbalancer.png "로드 벨런서")
 
   ## 환경 확인
 
   - EC2 인스턴스 확인
-    ![EC2](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/ec2dashboard.png "EC2")
+    ![EC2](./images/ec2dashboard.png "EC2")
   - S3로 가서 자동으로 생성된 버킷과 올라간 버전 확인
-    ![S3](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/s3.png "S3")
+    ![S3](./images/s3.png "S3")
 
   ## 혼자서 해보기
 
@@ -181,19 +181,19 @@
 
   1. 상단 앱 이름을 누르고 Application Versions를 선택합니다.
   2. 애플리케이션 버전 페이지에서 삭제할 모든 애플리케이션 버전을 선택한 후 삭제를 선택합니다.
-     ![Delete Versions](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/deleteversions.png "Delete Versions")
+     ![Delete Versions](./images/deleteversions.png "Delete Versions")
 
   ### 환경 삭제
 
   환경 대쉬보드에서 Actions -> Terminate Environment를 통해 삭제합니다.
-  ![Delete Env](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/terminateenv.png "Delete Env")
+  ![Delete Env](./images/terminateenv.png "Delete Env")
 
   ### 애플리케이션 삭제
 
   왼쪽 상단에서 Elastic Beanstalk를 선택하여 기본 대시보드로 돌아갑니다.
 
   어플리케이션에서 Actions -> Delete Application을 통해 삭제합니다.
-  ![Delete App](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/deleteapp.png "Delete App")
+  ![Delete App](./images/deleteapp.png "Delete App")
 
   - 미리 애플리케이션 버전을 삭제하지 않은 경우 S3 삭제를 잊지 말것.
 

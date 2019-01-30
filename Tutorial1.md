@@ -77,7 +77,7 @@ window 사용자 분들은 localDatabaseURI를
 ```json
 {
   "appname": "YOUR_APP_NAME", // 파스 대쉬보드에 표시될 앱 이름
-  "localDatabaseURI": "postgres://localhost:5432/testdb", // 로컬 데이터베이스 설정
+  "localDatabaseURI": "postgres://postgres:PASSWORD@localhost:5432/testdb", // 로컬 데이터베이스 설정
   "cloud": "./cloud/main.js",
   "appId": "YOUR_PARSE_APP_ID", // 파스 서버에서 사용할 앱 아이디
   "masterKey": "YOUR_MASTER_KEY", //// 파스 서버에서 사용할 마스터키 (유출금지)
@@ -107,7 +107,7 @@ parse-server running on port 1337
 
 브라우져에서 localhost:1337 로 접속하면 public폴더에 미리 넣어 놓은 index.html 파일을 확인할 수 있습니다.
 
-![index.html](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/parse_start.png "index.html")
+![index.html](./images/parse_start.png "index.html")
 
 index.js 파일 확인하며 대략적인 파스 서버의 실행코드를 살펴봅시다.
 
@@ -214,7 +214,7 @@ main.js에 `Parse.Cloud.define`을 통해 선언되어진 `hello` 를 외부에�
 
 `localhost:1337/parse/functions/hello` 이 주소를 통해 호출 가능합니다.
 
-![cloud function-hello](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/cloudfunction.png "cloud function-hello")
+![cloud function-hello](./images/cloudfunction.png "cloud function-hello")
 
 미리 Parse Server에 등록해놓은 AppId키 값을 헤더값으로 넣지 않으면 위와 같이 인증되지 않았다는 응답을 받게됩니다.
 여기서는 [Postman](https://www.getpostman.com/)을 통해 테스트해 보도록 하겠습니다.
@@ -228,7 +228,7 @@ main.js에 `Parse.Cloud.define`을 통해 선언되어진 `hello` 를 외부에�
 - Headers에 값 입력: X-Parse-Application-Id에는 미리 설정한 Parse App ID를, Content-Type에는 application/json을 입력합니다.
 - Send 버튼으로 다시 테스트 했을때 응답으로 "result": "Hi" 가 나타나면 성공입니다. Postman에서 만든 요청은 저장을 해주세요.
 
-![Postman](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/postman.png "Postman")
+![Postman](./images/postman.png "Postman")
 
 3. 이번에는 기존 코드를 응용하여 사용자 입력을 받아 정해진 응답을 주는 API를 만들어 보겠습니다.
 
@@ -248,7 +248,7 @@ name과 money를 파라미터로 받아 메세지를 출력해주는 API입니�
 
 기존 Postman에 만든 요청을 복제하여 새로운 요청을 만듭니다.
 
-![postman_duplication](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/postman_duplication.png "postman_duplication")
+![postman_duplication](./images/postman_duplication.png "postman_duplication")
 
 별다른 추가 작업 없이 Send를 통해 API를 호출해봅시다.
 
@@ -278,7 +278,7 @@ name과 money를 파라미터로 받아 메세지를 출력해주는 API입니�
 
 Postman에서 Body 부분에 name, money 값을 입력하고 위 과정을 반복해보면 아래와 같이 정상적인 결과를 얻을 수 있습니다.
 
-![postman_post](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/postman_post.png "postman_post")
+![postman_post](./images/postman_post.png "postman_post")
 
 차후 데이터베이스의 값을 다루는 API를 추가하게 되면 게임에서 유저들의 순위를 변동한다던가, 캐쉬를 적립한다거나 하는 등의 다양한 동작을 다룰 수 있습니다.
 
@@ -341,11 +341,11 @@ config/default.json
 
 로그인 화면에 위에서 설정한 대쉬보드의 id, password를 입력합니다.
 
-![dashboard_login](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/dashboard_login.png "dashboard_login")
+![dashboard_login](./images/dashboard_login.png "dashboard_login")
 
 드디어 대쉬보드의 메인 화면을 확인할 수 있습니다. 들어가서 이것저것 구경해보세요.
 
-![dashboard_main](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/dashboard_main.png "dashboard_main")
+![dashboard_main](./images/dashboard_main.png "dashboard_main")
 
 ### CLI을 통한 대쉬보드 접속
 
