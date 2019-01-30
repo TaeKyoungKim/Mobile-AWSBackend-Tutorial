@@ -235,13 +235,15 @@ EB Cli를 통한 설정은 여기까지입니다. 다음은 바로 배포를 �
 
 deploy 명령어를 통해 마지막 commit 기준으로 프로젝트를 서버에 업로드하여 배포할 수 있습니다.
 
-프로젝트를 압축하여 해당버전을  EB Application으로 인해 생성된 AWS S3에 업로드 후 배포하는 방식으로 동작합니다.
+`eb deploy` 라는 명령어를  수행하면  해당 프로젝트를 압축하여  EB Application으로 인해 생성된 AWS S3에 업로드 후 배포하는 방식으로 동작합니다.
 
 일단 배포를 실행하기 전에 `.ebextensions/02_nginx_proxy.config` 파일을  프로젝트에서 삭제하도록 하겠습니다. (다른곳에 백업해놓으세요.)
 
 그 후 git commit을 한 후 배포를 합니다.
 
 ```sh
+$ git add .
+$ git commit -m 'Delete nginx_proxy config'
 $ eb deploy
 
 
