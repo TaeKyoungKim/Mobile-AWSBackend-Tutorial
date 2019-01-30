@@ -423,7 +423,7 @@ Parse.Cloud.define("getItemList", async req => {
 
 주소를 `localhost:1337/parse/functions/whoami`로 바꾸었습니다.
 
-![Postman itemList](./images/postmanitemList.png "Postman itemList")
+![Postman itemList](./images/postmanitemList.png "Postman itemList")
 
 `Headers` 에 `X-Parse-Application-Id`이 잘 설정되어 있나 확인해주세요.
 
