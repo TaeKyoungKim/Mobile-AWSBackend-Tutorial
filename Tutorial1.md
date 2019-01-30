@@ -367,6 +367,14 @@ config/default.json
 
 index.js에서 설정했던 것과 유사한 설정입니다. 다만 local에서 실행하므로 masterKey를 입력하여 따로 아이디와 비밀번호 없이 해당 파스 서버에 접속할 수 있습니다. 기본 포트는 4040을 사용합니다.
 
+parse-dashboard 인스톨
+
+```
+$ npm install -g parse-dashboard
+```
+
+parse-dashboard 실행
+
 ```
 $ parse-dashboard --config parse-dashboard-config-local.json
 ```
@@ -378,7 +386,7 @@ The dashboard is now available at http://0.0.0.0:4040/
 ```
 
 위 명령어는 `package.json`에 미리 정의를 해 놓았으므로 `npm run dashboard:local`로도 실행할 수 있습니다.
-http://0.0.0.0:4040 혹은 http://localshot:4040 를 통해 로그인 과정 없이 접속이 되는것을 확인하세요.
+http://0.0.0.0:4040 혹은 http://localshot:4040 를 통해 로그인 과정 없이 접속이 되는것을 확인하세요. 윈도우에서는 0.0.0.0:4040은 인식이 되지 않습니다.
 
 ## Conclusion
 
