@@ -69,7 +69,7 @@ $ yarn
 
 3. `config/default.json` 파일 설정
 
-window 사용자 분들은
+window 사용자 분들은 localDatabaseURI를
 `postgres://POSTGRES_USERNAME:PASSWORD@localhost:5432/dbname`
 에서 POSTGRES_USERNAME 과 PASSWORD 부분을 맞게 변경해주시면 됩니다.
 
