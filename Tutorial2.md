@@ -111,6 +111,9 @@ Python을 기반으로 pip를 사용하여 설치됩니다. Python을 설치하�
 
 - [Python 설치](https://www.python.org/downloads/)
 
+윈도우 설치는 [프시켓님 글](https://medium.com/@psychet_learn/python-%EA%B8%B0%EC%B4%88-2%EC%9E%A5-python-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-windows-ver-b030d96bcbd0)
+를 참고하세요.
+
 EB CLI 설치
 
 ```sh
