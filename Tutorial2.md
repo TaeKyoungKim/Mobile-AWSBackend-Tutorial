@@ -15,7 +15,7 @@
 위 과정은 [처음 튜토리얼](./README.md)과 동일하다. 여기서는 처음 튜토리얼에서 만든 MyFirstapp 이라는 환경을 계속 사용합니다.
 
 ## RDS 설정
-
+
 ### RDS란
 
 > Amazon Relational Database Service(Amazon RDS)는 클라우드에서 관계형 데이터베이스를 더 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스입니다. 이 서비스는 산업 표준 관계형 데이터베이스를 위한 경제적이고 크기 조절이 가능한 용량을 제공하고 공통 데이터베이스 관리 작업을 관리합니다. [공식문서](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/Welcome.html)
@@ -26,14 +26,13 @@ RDS는 특정 앱 서버 환경에 종속되지 않는 별도의 데이터베�
 
 Elastic Beanstalk에서는 EC2 인스턴스를 사용하여 컴퓨팅 자원을 사용하게 됩니다. 저번 [튜토리얼](./Tutorial1.md)에 로컬에 PostgreSQL을 설치하여 사용한 것 처럼 프로젝트 소스가 올라가는 EC2 인스턴스에 바로 DB를 설치해서 사용하는 방법이 있지만 저희는 별도로 DB를 구성하여 백업, 관리, 확장성에 있어 이점을 가져가보도록 하겠습니다.
 
-
 1. 미리 만들어놓은 EB의 앱 환경을 여시고 Congifuration -> 하단의 Database 항목으로 가 Modify를 통해 수정을 합니다.
 
-![App Configuration](./images/RDS1.png "App Configuration")
+![App Configuration](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/RDS1.png "App Configuration")
 
 2. 하단에 Database 항목 수정
 
-![RDS Configuration](./images/RDS2.png "RDS Configuration")
+![RDS Configuration](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/RDS2.png "RDS Configuration")
 
 3Modify를 서택한 후 아래와 같이 설정을 합시다. Password같은 경우는 개인이 잘 관리하셔야합니다.
 
@@ -46,12 +45,12 @@ Elastic Beanstalk에서는 EC2 인스턴스를 사용하여 컴퓨팅 자원을
 - Retention: Create Snapshot
 - Availability: Low or High
 
-![DB Settings](./images/dbsettings.png "DB Settings")
+![DB Settings](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/dbsettings.png "DB Settings")
 
 배포시 Availability: High(Multi AZ)를 선택하면 DB 장애시 자동으로 생성되고 관리되는 예비 복제본을 사용하여 서비스를 유지시킬 수 있습니다. 물리적인 스토리지를 하나 더 생성하기 때문에 비용이 조금 더 올라가니 실 서비스 운영시 고려해보세요.
 
 4. 설정 후 Apply를 누르면 RDS가 생성되어 EB에 연결이 됩니다.
-대쉬보드에 있는 Event Log에 다음 메세지를 확인할 수 있습니다.
+   대쉬보드에 있는 Event Log에 다음 메세지를 확인할 수 있습니다.
 
 > Creating RDS database named: aa1o9u888xywzge. This may take a few minutes.
 
@@ -59,19 +58,19 @@ Elastic Beanstalk에서는 EC2 인스턴스를 사용하여 컴퓨팅 자원을
 
 - **RDS_HOSTNAME** – DB 인스턴스의 호스트 이름입니다.
 
-	Amazon RDS 콘솔 레이블 – 엔드포인트(호스트 이름)
+  Amazon RDS 콘솔 레이블 – 엔드포인트(호스트 이름)
 
 - **RDS_PORT** – DB 인스턴스가 연결을 허용하는 포트입니다. 기본값은 DB 엔진마다 다릅니다.
 
-	Amazon RDS 콘솔 레이블 – 포트
+  Amazon RDS 콘솔 레이블 – 포트
 
 - RDS_DB_NAME – 데이터베이스 이름(ebdb)입니다.
 
-	Amazon RDS 콘솔 레이블 – DB Name(DB 이름)
+  Amazon RDS 콘솔 레이블 – DB Name(DB 이름)
 
 - RDS_USERNAME – 데이터베이스에 대해 구성된 사용자 이름입니다.
 
-	Amazon RDS 콘솔 레이블 – 사용자 이름
+  Amazon RDS 콘솔 레이블 – 사용자 이름
 
 - RDS_PASSWORD – 데이터베이스에 대해 구성된 암호입니다.
 
@@ -126,7 +125,7 @@ AWS Identity and Access Management의 약자로서 액세스 키를 사용하여
 
 [IAM Console](https://console.aws.amazon.com/iam/home#/home) 을 통해 EB CLI를 사용할때 쓸 수 있는 계정을 생성해보도록 하겠습니다.
 
-![IAM User](./images/iam1.png "IAM User")
+![IAM User](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam1.png "IAM User")
 
 ### IAM을 통한 유저 생성
 
@@ -136,24 +135,23 @@ AWS Identity and Access Management의 약자로서 액세스 키를 사용하여
 - **Programmatic access**: 해당 유저에게 CLI를 사용해줄 수 있게 합니다. Access key와 secret key가 제공됩니다.
 - **AWS Management Console access**: 이 계정을 사용해 별도로 콘솔에 로그인이 가능합니다.
 
-![IAM Add User](./images/iam2.png "IAM Add User")
-
+![IAM Add User](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam2.png "IAM Add User")
 
 2.  권한설정 - Next:Permission 버튼을 눌러 권한설정으로 넘어갑니다.
-여기서는 Admin 그룹을 선택하여 모든 권한을 주도록 하겠습니다.
+   여기서는 Admin 그룹을 선택하여 모든 권한을 주도록 하겠습니다.
 
-![IAM User Permission](./images/iam3.png "IAM User Permission")
+![IAM User Permission](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam3.png "IAM User Permission")
 
 3. 태그 추가
-선택 항목으로서 여기서는 여러명의 유저 혹은 팀원이 사용한다면 역할에 따라 구분하기 쉽도록 position이란 태그를 추가해 보았습니다.
+   선택 항목으로서 여기서는 여러명의 유저 혹은 팀원이 사용한다면 역할에 따라 구분하기 쉽도록 position이란 태그를 추가해 보았습니다.
 
-![IAM User Tag](./images/iam4.png "IAM User Tag")
+![IAM User Tag](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam4.png "IAM User Tag")
 
 4. Review 후 Create user 버튼을 눌러 새로운 유저를 생성합니다.
 
 로컬환경에 Acess Key와 Secret access key를 등록하여 EB CLI를 사용할 것입니다. Secret access key는 비밀스럽게 잘 적어두세요.
 
-![IAM User Key](./images/iam5.png "IAM User Key")
+![IAM User Key](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/iam5.png "IAM User Key")
 
 이제 CLI를 사용할 수 있는 유저를 생성하고 Access Key와 Secret Key를 발급받았습니다.
 
@@ -267,11 +265,12 @@ Upload Complete.
 
 이제 Application 환경의 url로 접속해봅시다.
 
-![502](./images/502.png "502")
+![502](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/502.png "502")
 
 접속이 되지 않습니다. 다음 장에서 문제를 해결해보죠.
 
 ### EB 프록시 서버 구성(NginX)
+
 
 AWS EB에서 NodeJS 기반의 플랫폼으로 환경을 구성하면 기본적으로 NginX 프록시가 설치되어 있는 환경이 됩니다. 기본설정을 사용하면 웹사이트 접속(80포트)을 8081 포트로 전달하기 때문에 현재 우리가 index.js에서 설정해놓은 1337포트로 접근할 수가 없습니다.
 
@@ -366,7 +365,7 @@ unsafe-perm=true
 자 이제 어떻게 테스트할 수 있을까요?
 local과 다른 점은 주소 뿐입니다. 기존 Postman에서 테스트하던 API 접속 주소를 실제 서버 주소로 변경해주면 동작하겠죠?
 
-![Deploy Test](./images/deploytest.png "Deploy test")
+![Deploy Test](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/deploytest.png "Deploy test")
 
 
 
