@@ -1,4 +1,4 @@
-# 로컬에 구축한 서버 환경을 AWS EB로 배포 및 테스트
+# 로컬에 구축한 서버 환경을 AWS EB로 배포 및 테스트
 
 작성자: [Jeff Gu Kang](https://github.com/JeffGuKang/)
 
@@ -231,11 +231,12 @@ global:
 EB Cli를 통한 설정은 여기까지입니다. 다음은 바로 배포를 해보도록 하겠습니다.
 
 ## EB CLI을 통한 AWS 서버에 프로젝트 배포
-배포 명령어는 해당 폴더에서 deploy입니다.
+
+배포는 `eb init`을 통해 설정을 해놓은 프로젝트 폴더에서 `eb deploy`를 통해 실행됩니다.
 
 deploy 명령어를 통해 마지막 commit 기준으로 프로젝트를 서버에 업로드하여 배포할 수 있습니다.
 
-`eb deploy` 라는 명령어를  수행하면  해당 프로젝트를 압축하여  EB Application으로 인해 생성된 AWS S3에 업로드 후 배포하는 방식으로 동작합니다.
+`eb deploy` 라는 명령어를  수행하면  해당 프로젝트를 압축하여  EB Application으로 인해 생성된 AWS S3에 업로드 후 배포하는 방식으로 동작합니다. - [eb deploy](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html)
 
 일단 배포를 실행하기 전에 `.ebextensions/02_nginx_proxy.config` 파일을  프로젝트에서 삭제하도록 하겠습니다. (다른곳에 백업해놓으세요.)
 
@@ -258,12 +259,17 @@ Upload Complete.
 
 정상적으로 배포가 되었습니다.
 
+여기서  eb deploy를 하기까지의 동작 순서를 잠깐 되짚어보면 
+
+1. AWS IAM에서 CLI를 통해 AWS를 컨트롤 할 수 있는 계정 생성 및 컴퓨터에 정보 저장
+2. 프로젝트 폴더에서 `eb init`을 통해 계정 기준으로 elastic beanstalk 정보 설정
+3. `eb deploy`를 통해 최근 commit 시점의 소스를 AWS에 업로드
+
 이제 Application 환경의 url로 접속해봅시다.
 
-![502](./images/502.png "502")
+![502](./images/502.png "502")
 
 접속이 되지 않습니다. 다음 장에서 문제를 해결해보죠.
-
 
 ### EB 프록시 서버 구성(NginX)
 

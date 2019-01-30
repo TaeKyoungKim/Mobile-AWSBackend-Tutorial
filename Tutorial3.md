@@ -475,7 +475,7 @@ try-catch 문은 try블록 내의 코드를 실행할 시 에러가 발생하면
 
 비동기 함수를 다루기 위해 사용되는 async await 에 관한 것은 [Async/Await](https://javascript.info/async-await)에 설명이 되어 있습니다. 간단히 말하면 비동기로 사용할 함수를 async를 통해 선언하고(난 await를 쓸것이야 라고 미리 알려주는 것) 함수 스코프 내에서 사용하는 비동기 함수 앞에 await를 붙여 해당 비동기 함수의 결과값이 리턴될때까지 다음 처리를 기다리는 것입니다. 그러므로 `await query.find()` 는 비동기 함수인 query.find()의 응답을 기다렸다가 그 응답을 `const result`를 통해 받게 되는 것입니다. `await`가 선언되지 않았다면 응답을 기다리지 않고 바로 다음 코드가 실행되며 result는 함수의 결과값이 아닌 해당 함수 그 자체를 가리키게 됩니다.
 
-### Conclusion
+## Conclusion
 
 - 리액트 네이티브로 만든 모바일 클라이언트를 통해 백엔드 api 호출
 - 데이터베이스 클래스 생성 및 데이터 추가
