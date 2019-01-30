@@ -11,11 +11,18 @@ AWS에서 RDS로 PostgreSQL을 지원하기 때문에 MongoDB 대신 PostgreSQL�
 4. Postman을 통해 동작 테스트
 5. Parse-Dashboard를 통해 데이터베이스 확인
 
+
+windows에서는
+`npm install -g win-node-env`
+를 통해 env 입력을 받을 수 있도록 해주세요.
+
 ## PostgreSQL 설치
 
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 Window Tutorial: http://www.postgresqltutorial.com/install-postgresql/
+
+윈도우에서는 PostgreSQL 설치 시 SQL Shell 설치 후 그것을 통해 접속하는 것을 추천합니다.
 
 1. 설치된 버전 확인
 
@@ -51,7 +58,7 @@ CREATE DATABASE testdb;
 
 ### 로컬 환경에 Parse Server 설치 및 실행
 
-1. 미리 설정된 Parse-Server [다운로드](https://github.com/JeffGuKang/awseb-parse-server) (별풍 대신 스타를 줍시다.)
+1. 미리 설정된 Parse-Server [다운로드](https://github.com/JeffGuKang/awseb-parse-server) (별풍 대신 스타를 줍시다.)
 2. package.json 모듈들 인스톨
 
 ```sh
@@ -61,6 +68,11 @@ $ yarn
 ```
 
 3. `config/default.json` 파일 설정
+
+window 사용자 분들은
+`postgres://POSTGRES_USERNAME:PASSWORD@localhost:5432/dbname`
+에서 POSTGRES_USERNAME 과 PASSWORD 부분을 맞게 변경해주시면 됩니다.
+
 
 ```json
 {
@@ -97,7 +109,7 @@ parse-server running on port 1337
 
 ![index.html](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/parse_start.png "index.html")
 
-index.js 파일 확인하며 대략적인 파스 서버의 실행코드를 살펴봅시다.
+index.js 파일 확인하며 대략적인 파스 서버의 실행코드를 살펴봅시다.
 
 ```js
 ...
@@ -204,7 +216,7 @@ main.js에 `Parse.Cloud.define`을 통해 선언되어진 `hello` 를 외부에�
 
 ![cloud function-hello](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/cloudfunction.png "cloud function-hello")
 
-미리 Parse Server에 등록해놓은 AppId키 값을 헤더값으로 넣지 않으면 위와 같이 인증되지 않았다는 응답을 받게됩니다.
+미리 Parse Server에 등록해놓은 AppId키 값을 헤더값으로 넣지 않으면 위와 같이 인증되지 않았다는 응답을 받게됩니다.
 여기서는 [Postman](https://www.getpostman.com/)을 통해 테스트해 보도록 하겠습니다.
 
 1. Postman 다운로드 및 실행
@@ -218,7 +230,7 @@ main.js에 `Parse.Cloud.define`을 통해 선언되어진 `hello` 를 외부에�
 
 ![Postman](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/postman.png "Postman")
 
-3. 이번에는 기존 코드를 응용하여 사용자 입력을 받아 정해진 응답을 주는 API를 만들어 보겠습니다.
+3. 이번에는 기존 코드를 응용하여 사용자 입력을 받아 정해진 응답을 주는 API를 만들어 보겠습니다.
 
 cloud/main.js 하단에 다음 코드를 추가합니다.
 
@@ -247,7 +259,7 @@ name과 money를 파라미터로 받아 메세지를 출력해주는 API입니�
 }
 ```
 
-해당 API가 존재하지 않는다는 오류코드가 나옵니다. 코드를 변경 후 NodeJS 서버를 재실행해야 적용이 되기 때문입니다.
+해당 API가 존재하지 않는다는 오류코드가 나옵니다. 코드를 변경 후 NodeJS 서버를 재실행해야 적용이 되기 때문입니다.
 `npm run start:local`을 통해 서버를 실행하고 있는 콘솔에서도 에러 메세지를 확인할 수 있습니다.
 
 서버를 실행하고 있는 콘솔에서 파스 서버를 ctl+c를 통해 중단시킨 후 재실행해봅니다.
@@ -335,7 +347,7 @@ config/default.json
 
 ![dashboard_main](/Users/jeffkang/Documents/Projects/OpenSource/react-native/RNClient-ParseServer-Tutorial/images/dashboard_main.png "dashboard_main")
 
-### CLI을 통한 대쉬보드 접속
+### CLI을 통한 대쉬보드 접속
 
 프로젝트에는 미리 정의된 `parse-dashboard-config-local.json` 파일이 있습니다.
 
@@ -353,7 +365,7 @@ config/default.json
 }
 ```
 
-index.js에서 설정했던 것과 유사한 설정입니다. 다만 local에서 실행하므로 masterKey를 입력하여 따로 아이디와 비밀번호 없이 해당 파스 서버에 접속할 수 있습니다. 기본 포트는 4040을 사용합니다.
+index.js에서 설정했던 것과 유사한 설정입니다. 다만 local에서 실행하므로 masterKey를 입력하여 따로 아이디와 비밀번호 없이 해당 파스 서버에 접속할 수 있습니다. 기본 포트는 4040을 사용합니다.
 
 ```
 $ parse-dashboard --config parse-dashboard-config-local.json
@@ -375,6 +387,6 @@ http://0.0.0.0:4040 혹은 http://localshot:4040 를 통해 로그인 과정 없
 - Parse Server의 클라우드 코드를 통해 API를 생성하고 Postman을 통해 테스트해 보았습니다.
 - Parse Dashboard로 Parse Server 데이터베이스에 접속하여 관리자 페이지를 동작하였습니다.
 
-다음은 위에서 구성한 Parse Server를 실제로 AWS 에 배포하여 구동해보도록 하겠습니다.
+다음은 위에서 구성한 Parse Server를 실제로 AWS 에 배포하여 구동해보도록 하겠습니다.
 
 [이전 과정으로](./README.md) / [다음 과정으로](./Tutorial2.md)
