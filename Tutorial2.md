@@ -114,9 +114,9 @@ Python을 기반으로 pip를 사용하여 설치됩니다. Python을 설치하�
 윈도우 설치는 [프시켓님 글](https://medium.com/@psychet_learn/python-%EA%B8%B0%EC%B4%88-2%EC%9E%A5-python-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-windows-ver-b030d96bcbd0)
 를 참고하세요.
 
-윈도우는 python3.7 사용자인 경우 윈도우키 누르고 ->환경 변수 설정 -> 시스템 환경 변수 설정 -> PATH에서
+윈도우는 python3.7 사용자인 경우 윈도우키 누르고 ->환경 변수 설정 -> 시스템 환경 변수 설정 ->에서
 `%USERPROFILE%\AppData\roaming\Python\Python37\scripts`
-를 추가해주시면 됩니다. 파이썬 버전에 주의하세요.
+를 추가해주시면 됩니다. 다만 윈도우 환경에 따라 설치되는 폴더가 위 경로와 다른 경우가 빈번하오니 주의하세요.(안되면 issue 등으로 남겨주세요) 파이썬 버전에 주의하세요.
 
 EB CLI 설치
 
